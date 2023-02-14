@@ -1,3 +1,6 @@
+import http from "../http-common";
+
+
 const uploadService = (file) => {
     let formData = new FormData();
     console.log("uploading file");
@@ -5,7 +8,7 @@ const uploadService = (file) => {
     if (formData) {
         console.log(formData.get("file"));
     }
-    return new Promise(resolve => setTimeout(resolve, 1000))
+    return http.post("/import_excel/", formData);
 }
 
 export {uploadService};
