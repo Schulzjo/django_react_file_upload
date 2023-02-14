@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from excel_import.views import ExcelImportView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('import_excel/', ExcelImportView.as_view()),
 ]
