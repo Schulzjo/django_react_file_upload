@@ -6,7 +6,7 @@ const FileUpload = () => {
     const [msg, setMsg] = useState(null);
 
     const selectFile = (e) => {
-        setFile(e.target);
+        setFile(e.target.files[0]);
     }
 
     const onClickUpload = () => {
@@ -19,6 +19,9 @@ const FileUpload = () => {
 
         uploadService(file).then(() => {
             setMsg("Finished");
+        }).catch((e)=> {
+            setMsg("Error");
+            console.log(e.message)
         })
     }
 
