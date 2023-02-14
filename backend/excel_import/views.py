@@ -23,7 +23,6 @@ class ExcelImportView(APIView):
 
             if df is not None:
                 for row in df.itertuples():
-                    print(row)
                     seralizer = ImportedDataSerializer(
                         data={'column_a': row.column_a, 'column_b': row.column_b})
                     if seralizer.is_valid(raise_exception=False):
