@@ -15,7 +15,7 @@ class ExcelImportView(APIView):
             return Response(status=HTTP_400_BAD_REQUEST)
         else:
             if file.name.endswith(".xlsx"):
-                df = pd.read_excel(file)
+                df = pd.read_excel(file, engine="openpyxl")
             elif file.name.endswith(".csv"):
                 df = pd.read_csv(file)
             else:
