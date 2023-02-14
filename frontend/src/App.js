@@ -1,8 +1,10 @@
 import './App.css';
+import {FileUpload} from "./components/FileUpload";
 
 function App() {
   return (
-    <div>{'Empty project'}
+    <div>
+      <FileUpload/>
     </div>
   );
 }
